@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Controle de Estoque - Farmacia</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/angular.js"></script>
+    <script src="lib/js/bootstrap.js"></script>
+    <script src="app/config/app.config.js"></script>
+    <script src="app/controller/produto.controller.js"></script>
+
+
+</head>
+<body ng-app="app">
+
+<div ng-controller="produtoController" class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-edit"></i> Controle de Estoque - Farmacia
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Descrição</label>
+                            <input ng-model="produto.descricao" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Categoria</label>
+                            <input ng-model="produto.categoria" type="number" class="form-control">
+                        </div>
+                    </div>
+					
+					<div class="col-md-3">
+                        <div class="form-group">
+                            <label>Preço</label>
+                            <input ng-model="produto.preco" type="number" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Estoque</label>
+                            <input ng-model="produto.estoque" type="number" class="form-control">
+                        </div>
+                    </div>
+					
+					<div class="col-md-3">
+                        <div class="form-group">
+                            <label>Cod. Barras</label>
+                            <input ng-model="produto.codBarra" type="number" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel-footer">
+
+                    <button class="btn btn-primary navbar-btn"
+                            ng-click="salvar()">
+                        <i class="fa fa-floppy-o"></i>
+                        Salvar
+                    </button>
+
+                    <button class="btn btn-warning navbar-btn"
+                            ng-click="limpar()">
+                        <i class="fa fa-eraser"></i>
+                        Limpar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <table ng-show="produtos.length >0" class="table table-hover">
+            <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+				<th>Estoque</th>
+				<th>Cód. Barras</th>
+                <th>#</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="produto in produtos track by $index">
+                <td>{{produto.descricao}}</td>
+                <td>{{produto.categoria}}</td>
+                <td>{{produto.preco}}</td>
+				<td>{{produto.estoque}}</td>
+				<td>{{produto.codBarra}}</td>
+                <td ng-click="editar(produto)"><i class="fa fa-edit"></i></td>
+                <td ng-click="excluir(produto.id)"><i class="fa fa-trash"></i></td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+</body>
+</html>
