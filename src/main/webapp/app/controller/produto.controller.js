@@ -38,8 +38,15 @@ function produtoController($scope, $http) {
         }
     }
 
-    function editar(produto) {
-        $scope.produto = produto;
+    function editar(id) {
+    	 $http.get('api/produto/'+id).then(getResult, getError);
+         function getResult(response) {
+             $scope.produto = response.data;
+         }
+
+         function getError(response) {
+             console.log(response.data);
+         }
     }
 
     function excluir(id) {

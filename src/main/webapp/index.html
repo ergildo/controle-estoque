@@ -27,35 +27,35 @@
             <div class="panel-body">
 
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Descrição</label>
                             <input ng-model="produto.descricao" type="text" class="form-control">
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label>Categoria</label>
-                            <input ng-model="produto.categoria" type="number" class="form-control">
-                        </div>
+                            <label>Categoria</label> <input ng-model="produto.categoria"
+									type="text" class="form-control">
+							</div>
                     </div>
 					
-					<div class="col-md-3">
+					<div class="col-md-4">
                         <div class="form-group">
                             <label>Preço</label>
                             <input ng-model="produto.preco" type="number" class="form-control">
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Estoque</label>
                             <input ng-model="produto.estoque" type="number" class="form-control">
                         </div>
                     </div>
 					
-					<div class="col-md-3">
+					<div class="col-md-4">
                         <div class="form-group">
                             <label>Cod. Barras</label>
                             <input ng-model="produto.codBarra" type="number" class="form-control">
@@ -99,7 +99,7 @@
                 <td>{{produto.preco}}</td>
 				<td>{{produto.estoque}}</td>
 				<td>{{produto.codBarra}}</td>
-                <td ng-click="editar(produto)"><i class="fa fa-edit"></i></td>
+                <td ng-click="editar(produto.id)"><i class="fa fa-edit"></i></td>
                 <td ng-click="excluir(produto.id)"><i class="fa fa-trash"></i></td>
             </tr>
 

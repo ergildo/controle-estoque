@@ -44,6 +44,16 @@ public class ProdutoController {
 
 	/**
 	 * @param id
+	 * @return
+	 * @throws AplicacaoException
+	 */
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public @ResponseBody Produto consultar(@PathVariable("id") Integer id) throws AplicacaoException {
+		return ProdutoService.consultar(id);
+	}
+
+	/**
+	 * @param id
 	 * @throws AplicacaoException
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

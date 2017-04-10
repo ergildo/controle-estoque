@@ -28,7 +28,7 @@ public class Produto implements Serializable {
 	private Integer id;
 	private String descricao;
 	private String categoria;
-	private String estoque;
+	private Integer estoque;
 	private BigDecimal preco;
 	private Integer codBarra;
 
@@ -56,11 +56,11 @@ public class Produto implements Serializable {
 		this.categoria = categoria;
 	}
 
-	public String getEstoque() {
+	public Integer getEstoque() {
 		return estoque;
 	}
 
-	public void setEstoque(String estoque) {
+	public void setEstoque(Integer estoque) {
 		this.estoque = estoque;
 	}
 
